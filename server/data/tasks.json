@@ -1,0 +1,84 @@
+[
+  {
+    "id": "task-1784966021290",
+    "title": "complete project",
+    "description": "project testing and uploading to github",
+    "category": "development",
+    "priority": "Medium",
+    "status": "Done",
+    "dueDate": "2026-07-26T07:52:00.000Z",
+    "estimatedMinutes": 120,
+    "spentMinutes": 0,
+    "subtasks": [
+      {
+        "id": "sub-1784966019209",
+        "title": "python",
+        "done": false
+      },
+      {
+        "id": "sub-1784966069330",
+        "title": "html",
+        "done": false
+      }
+    ],
+    "tags": [
+      "fix bugs, test"
+    ],
+    "recurrence": "None",
+    "order": 1784966021290,
+    "completedAt": "2026-07-25T07:55:16.984Z",
+    "createdAt": "2026-07-25T07:53:41.290Z",
+    "updatedAt": "2026-07-25T07:55:16.993Z"
+  },
+  {
+    "id": "task-2",
+    "title": "Wire up REST API for tasks",
+    "description": "Connect the frontend context to the Express backend endpoints.",
+    "category": "Development",
+    "priority": "High",
+    "status": "Pending",
+    "dueDate": "2026-07-26T12:00:00.000Z",
+    "estimatedMinutes": 90,
+    "spentMinutes": 0,
+    "subtasks": [
+      {
+        "id": "sub-1784964989588",
+        "title": "python",
+        "done": false
+      },
+      {
+        "id": "sub-1784965794830",
+        "title": "python",
+        "done": false
+      }
+    ],
+    "tags": [
+      "Backend"
+    ],
+    "recurrence": "None",
+    "order": 2000,
+    "completedAt": null,
+    "createdAt": "2026-07-21T10:15:00.000Z",
+    "updatedAt": "2026-07-25T07:49:57.630Z"
+  },
+  {
+    "id": "task-5",
+    "title": "Review pull requests",
+    "description": "Go through open PRs and leave feedback.",
+    "category": "Development",
+    "priority": "Medium",
+    "status": "Done",
+    "dueDate": "2026-07-23T15:00:00.000Z",
+    "estimatedMinutes": 60,
+    "spentMinutes": 55,
+    "subtasks": [],
+    "tags": [
+      "Backend",
+      "Review"
+    ],
+    "recurrence": "None",
+    "order": 5000,
+    "completedAt": "2026-07-23T14:30:00.000Z",
+    "createdAt": "2026-07-22T09:00:00.000Z"
+  }
+]

@@ -76,7 +76,7 @@ _Add screenshots of your application here._
 
 ## 👩‍💻 Developer
 
-**Varsha K**
+**Vibha R**
 
 Full Stack Developer Intern – IncodeVision
 

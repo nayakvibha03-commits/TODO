@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: nexustask-pro
+    runtime: node
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+    # Free plan storage is temporary: tasks reset on every redeploy/restart.
+    # To keep data permanently, upgrade to a paid plan, then uncomment:
+    # disk:
+    #   name: taskdata
+    #   mountPath: /var/data
+    #   sizeGB: 1
+    # and add env var  DATA_DIR=/var/data

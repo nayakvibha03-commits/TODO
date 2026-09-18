@@ -6,8 +6,10 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_FILE = path.join(__dirname, 'data', 'tasks.json');
-const REMINDERS_FILE = path.join(__dirname, 'data', 'reminders.json');
+const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, 'data');
+const DATA_FILE = path.join(DATA_DIR, 'tasks.json');
+const REMINDERS_FILE = path.join(DATA_DIR, 'reminders.json');
+const DIST_DIR = path.join(__dirname, '..', 'dist');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -146,6 +148,15 @@ app.delete('/api/reminders/:id', (req, res) => {
   res.json({ message: 'Reminder deleted', id });
 });
 
-app.listen(PORT, () => {
+// Health check (used by hosting platforms)
+app.get('/healthz', (req, res) => res.json({ ok: true }));
+
+// Serve the built React app in production
+if (fs.existsSync(DIST_DIR)) {
+  app.use(express.static(DIST_DIR));
+  app.get(/^\/(?!api\/).*/, (req, res) => res.sendFile(path.join(DIST_DIR, 'index.html')));
+}
+
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`⚡ NexusTask REST API server listening on http://localhost:${PORT}`);
 });
